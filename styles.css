@@ -6,6 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
@@ -15,7 +17,7 @@ body {
         "menu-left main-content sidebar-right"
         "menu-left-bottom main-content sidebar-right"
         "footer footer sidebar-right";
-    grid-template-rows: 100px 0.5fr 0.5fr 100px;
+    grid-template-rows: 100px 1fr 1fr 100px;
     grid-template-columns: 150px 1fr 150px;
     height: 100vh;
 }
@@ -27,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 0 5vw;
+    padding: 0 10px;
 }
 
 ul {
@@ -45,7 +47,7 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    padding: 0.5vw 1.5vw;
+    padding: 5px 15px;
     color: black;
     transition: color 0.3s;
 }
@@ -62,7 +64,6 @@ ul li a:hover {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2vw;
 }
 
 .text-field-footer {
@@ -72,7 +73,6 @@ ul li a:hover {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 1.2vw;
 }
 
 .menu-left {
@@ -95,7 +95,7 @@ ul li a:hover {
 }
 
 #main-page {
-    font-size: 5vw;
+    font-size: 5em;
     font-weight: bold;
     text-align: center;
     color: black;
@@ -103,7 +103,7 @@ ul li a:hover {
 
 .image {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
     object-fit: contain;
 }
 
@@ -131,13 +131,13 @@ ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 5vw;
+    padding: 0 10px;
     position: relative;
     height: 100px;
-    font-size: 1.5vw;
+    font-size: 20px;
 }
 
-/* Медиа-запросы для адаптации на разных экранах */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         grid-template-areas:
@@ -149,28 +149,27 @@ ul li a:hover {
             "footer";
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        height: auto;
     }
-    
-    ul {
+
+    .header ul {
         flex-direction: column;
         gap: 10px;
     }
-    
-    .text-field, .text-field-footer {
-        font-size: 3vw;
-    }
-}
 
-@media (max-width: 480px) {
-    .header, .footer, .menu-left, .menu-left-bottom, .sidebar-right {
-        padding: 10px;
+    .header {
+        padding: 20px;
     }
-    
+
     #main-page {
         font-size: 3em;
     }
-    
-    .text-field, .text-field-footer {
-        font-size: 4vw;
+
+    .menu-left,
+    .menu-left-bottom,
+    .sidebar-right,
+    .footer {
+        font-size: 14px;
+        padding: 10px;
     }
 }
