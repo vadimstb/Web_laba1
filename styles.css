@@ -6,8 +6,6 @@
 
 body {
     font-family: Arial, sans-serif;
-    height: 100vh;
-    overflow-x: hidden;
 }
 
 .container {
@@ -17,11 +15,63 @@ body {
         "menu-left main-content sidebar-right"
         "menu-left-bottom main-content sidebar-right"
         "footer footer sidebar-right";
-    grid-template-rows: 100px 1fr 1fr 100px;
+    grid-template-rows: 100px 0.5fr 0.5fr 100px;
     grid-template-columns: 150px 1fr 150px;
     height: 100vh;
 }
 
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 100px 1fr 100px; /* Уменьшение ширины колонок на мобильных */
+    }
+
+    .header, .footer {
+        padding: 10px;
+    }
+
+    .text-field, .text-field-footer {
+        font-size: 2.5vw; /* Уменьшение текста для мобильных */
+    }
+    
+    #main-page {
+        font-size: 3vw; /* Размер шрифта для основного текста */
+    }
+
+    .menu-left, .menu-left-bottom, .sidebar-right {
+        padding: 10px; /* Уменьшение отступов */
+        font-size: 2.5vw;
+    }
+
+    .header, .footer {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 80px 1fr 80px; /* Еще более узкие колонки для маленьких экранов */
+    }
+
+    .text-field, .text-field-footer {
+        font-size: 4vw; /* Еще более маленький текст */
+    }
+
+    #main-page {
+        font-size: 4vw;
+    }
+    
+    .menu-left, .menu-left-bottom, .sidebar-right {
+        padding: 5px; /* Минимизация отступов на маленьких экранах */
+        font-size: 3.5vw;
+    }
+
+    .header, .footer {
+        font-size: 4vw;
+    }
+}
+
+/* Другие стили */
 .header {
     grid-area: header;
     background-color: lightblue;
@@ -29,7 +79,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 0 10px;
+    padding: 0 5vw;
 }
 
 ul {
@@ -47,7 +97,7 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    padding: 5px 15px;
+    padding: 0.5vw 1.5vw;
     color: black;
     transition: color 0.3s;
 }
@@ -64,6 +114,7 @@ ul li a:hover {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1.2vw;
 }
 
 .text-field-footer {
@@ -73,6 +124,7 @@ ul li a:hover {
     position: absolute;
     top: 10px;
     left: 10px;
+    font-size: 1.2vw;
 }
 
 .menu-left {
@@ -95,7 +147,7 @@ ul li a:hover {
 }
 
 #main-page {
-    font-size: 5em;
+    font-size: 5vw;
     font-weight: bold;
     text-align: center;
     color: black;
@@ -103,7 +155,7 @@ ul li a:hover {
 
 .image {
     max-width: 100%;
-    max-height: 100%;
+    height: auto;
     object-fit: contain;
 }
 
@@ -131,45 +183,8 @@ ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 10px;
+    padding: 0 5vw;
     position: relative;
     height: 100px;
-    font-size: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        grid-template-areas:
-            "header"
-            "main-content"
-            "menu-left"
-            "menu-left-bottom"
-            "sidebar-right"
-            "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        height: auto;
-    }
-
-    .header ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .header {
-        padding: 20px;
-    }
-
-    #main-page {
-        font-size: 3em;
-    }
-
-    .menu-left,
-    .menu-left-bottom,
-    .sidebar-right,
-    .footer {
-        font-size: 14px;
-        padding: 10px;
-    }
+    font-size: 1.5vw;
 }
