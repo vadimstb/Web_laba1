@@ -20,7 +20,6 @@ body {
     height: 100vh;
 }
 
-/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 100px 1fr 100px;
@@ -75,10 +74,9 @@ body {
     }
 }
 
-/* Другие стили */
 .header {
     grid-area: header;
-    background-color: lightblue;
+    background-color: rgb(91, 101, 245);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,14 +128,14 @@ ul li a:hover {
     left: 10px;
     font-size: 1.2vw;
     max-width: 150px;
-    white-space: nowrap; /* Предотвращаем перенос текста */
-    overflow: hidden;    /* Скрываем текст, если он выходит за пределы */
-    text-overflow: ellipsis; /* Добавляем троеточие, если текст слишком длинный */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menu-left {
     grid-area: menu-left;
-    background-color: peachpuff;
+    background-color: rgb(252, 152, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,7 +169,7 @@ ul li a:hover {
 
 .sidebar-right {
     grid-area: sidebar-right;
-    background-color: peachpuff;
+    background-color: rgb(252, 152, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,7 +180,7 @@ ul li a:hover {
 
 .menu-left-bottom {
     grid-area: menu-left-bottom;
-    background-color: lightgreen;
+    background-color: rgb(93, 110, 182);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,7 +191,7 @@ ul li a:hover {
 
 .footer {
     grid-area: footer;
-    background-color: lightblue;
+    background-color: rgb(250, 252, 157);
     display: flex;
     align-items: center;
     justify-content: center;
