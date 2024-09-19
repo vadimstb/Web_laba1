@@ -23,7 +23,7 @@ body {
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 100px 1fr 100px; /* Уменьшение ширины колонок на мобильных */
+        grid-template-columns: 100px 1fr 100px;
     }
 
     .header, .footer {
@@ -31,15 +31,17 @@ body {
     }
 
     .text-field, .text-field-footer {
-        font-size: 2.5vw; /* Уменьшение текста для мобильных */
+        font-size: 2.5vw;
+        right: 5px;  /* Уменьшаем отступ от правого края */
+        max-width: 30%; /* Ограничиваем ширину поля, чтобы не перекрывал текст */
     }
     
     #main-page {
-        font-size: 3vw; /* Размер шрифта для основного текста */
+        font-size: 3vw;
     }
 
     .menu-left, .menu-left-bottom, .sidebar-right {
-        padding: 10px; /* Уменьшение отступов */
+        padding: 10px;
         font-size: 2.5vw;
     }
 
@@ -50,11 +52,13 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        grid-template-columns: 80px 1fr 80px; /* Еще более узкие колонки для маленьких экранов */
+        grid-template-columns: 80px 1fr 80px;
     }
 
     .text-field, .text-field-footer {
-        font-size: 4vw; /* Еще более маленький текст */
+        font-size: 4vw;
+        right: 5px; /* Корректируем позицию */
+        max-width: 30%; /* Уменьшаем ширину текстовых полей */
     }
 
     #main-page {
@@ -62,8 +66,10 @@ body {
     }
     
     .menu-left, .menu-left-bottom, .sidebar-right {
-        padding: 5px; /* Минимизация отступов на маленьких экранах */
+        padding: 5px;
         font-size: 3.5vw;
+        word-wrap: break-word; /* Перенос текста, если он не помещается */
+        overflow: hidden; /* Скрываем лишний текст */
     }
 
     .header, .footer {
@@ -115,6 +121,7 @@ ul li a:hover {
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2vw;
+    max-width: 30%; /* Ограничение ширины, чтобы текст не налазил */
 }
 
 .text-field-footer {
@@ -125,6 +132,7 @@ ul li a:hover {
     top: 10px;
     left: 10px;
     font-size: 1.2vw;
+    max-width: 30%; /* Ограничение ширины поля в футере */
 }
 
 .menu-left {
@@ -135,6 +143,8 @@ ul li a:hover {
     justify-content: center;
     padding: 20px;
     text-align: justify;
+    word-wrap: break-word; /* Перенос текста на новую строку */
+    overflow: hidden; /* Скрытие текста, который не помещается */
 }
 
 .main-content {
@@ -166,6 +176,8 @@ ul li a:hover {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    word-wrap: break-word; /* Перенос текста */
+    overflow: hidden; /* Скрытие переполнения */
 }
 
 .menu-left-bottom {
@@ -175,6 +187,8 @@ ul li a:hover {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .footer {
