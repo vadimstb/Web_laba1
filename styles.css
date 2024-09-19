@@ -32,8 +32,7 @@ body {
 
     .text-field, .text-field-footer {
         font-size: 2.5vw;
-        right: 5px;  /* Уменьшаем отступ от правого края */
-        max-width: 30%; /* Ограничиваем ширину поля, чтобы не перекрывал текст */
+        max-width: 30%;
     }
     
     #main-page {
@@ -56,9 +55,8 @@ body {
     }
 
     .text-field, .text-field-footer {
-        font-size: 4vw;
-        right: 5px; /* Корректируем позицию */
-        max-width: 30%; /* Уменьшаем ширину текстовых полей */
+        font-size: 3.5vw;
+        max-width: 25%;
     }
 
     #main-page {
@@ -68,8 +66,8 @@ body {
     .menu-left, .menu-left-bottom, .sidebar-right {
         padding: 5px;
         font-size: 3.5vw;
-        word-wrap: break-word; /* Перенос текста, если он не помещается */
-        overflow: hidden; /* Скрываем лишний текст */
+        word-wrap: break-word;
+        overflow: hidden;
     }
 
     .header, .footer {
@@ -116,12 +114,11 @@ ul li a:hover {
     background-color: white;
     padding: 5px 10px;
     border: 1px solid black;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    margin-left: auto;
     font-size: 1.2vw;
-    max-width: 30%; /* Ограничение ширины, чтобы текст не налазил */
+    max-width: 150px;
+    display: inline-block;
 }
 
 .text-field-footer {
@@ -132,7 +129,10 @@ ul li a:hover {
     top: 10px;
     left: 10px;
     font-size: 1.2vw;
-    max-width: 30%; /* Ограничение ширины поля в футере */
+    max-width: 150px;
+    white-space: nowrap; /* Предотвращаем перенос текста */
+    overflow: hidden;    /* Скрываем текст, если он выходит за пределы */
+    text-overflow: ellipsis; /* Добавляем троеточие, если текст слишком длинный */
 }
 
 .menu-left {
@@ -143,8 +143,8 @@ ul li a:hover {
     justify-content: center;
     padding: 20px;
     text-align: justify;
-    word-wrap: break-word; /* Перенос текста на новую строку */
-    overflow: hidden; /* Скрытие текста, который не помещается */
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .main-content {
@@ -176,8 +176,8 @@ ul li a:hover {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    word-wrap: break-word; /* Перенос текста */
-    overflow: hidden; /* Скрытие переполнения */
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .menu-left-bottom {
